@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initail-scale=1.0" />
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/428cf22b52.js" crossorigin="anonymous"></script>
+   
+</head>
+<body>
+
+    <!--sign up-->
+    <div class="row d-flex justify-content-center">
+        <div class="card col-6 shadow p-3 mb-5 bg-body rounded" style="top: 20vh">
+            <form method="post" class="row ms-1 mb-1 p-2 pb-0 px-4">
+
+                <div class="row mb-2">
+                    <label for="email">Email</label> <br />
+                    <input id="email" type="text" placeholder="Email" name="mail"/>
+                </div>
+
+
+
+                <div class="row">
+                    <label for="password">Password</label> <br />
+                    <input id="password" type="password" placeholder="Password" name="pwd"/>
+                </div>
+
+                <div class="row d-flex justify-content-center m-1">
+                    <input class="col-4 btn btn-light border border-dark" type="submit" value="Sign Up" />
+                </div>
+            </form>
+
+            <!--social signups-->
+
+            <hr />
+
+            <div class="mb-2 row d-flex justify-content-center">
+                <div class="col-3 text-center">
+                    OR Sign Up Using
+                </div>
+            </div>
+
+                <div class="row d-flex justify-content-center">
+                    <div class="col-3 text-center">
+                    <a href="/auth/google"><i class="btn btn-light border border-dark fa-brands fa-google"></i></a>
+                    </div>
+
+                    
+
+                </div>
+               
+                <div class="mt-4 row d-flex justify-content-center">
+                <div class="col-3 text-center">
+                     <div><button class="btn btn-light" onclick="func()">login</button>
+    <script>
+        function func() {
+            window.location = window.location + "login";
+        }
+    </script></div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+    <script>
+      <% if(flash.success && flash.success.length > 0) {%> 
+
+      new Noty({
+        theme: 'relax',
+        layout: 'topRight',
+        text: "<%=flash.success%>",
+        timeout:2000,
+        type: 'success'
+       
+      }).show();
+
+      <%}%>
+
+       <% if(flash.error && flash.error.length > 0) {%> 
+
+      new Noty({
+        theme: 'relax',
+        layout: 'topRight',
+        text: "<%=flash.error%>",
+        timeout:4000,
+        type: 'error'
+       
+      }).show();
+
+      <%}%>
+    </script>
+
+   
+
+</body>
+</html>
